@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include "main.h"
-#include "_putchar.c"
 
 int main(void)
 {
-	_putchar("_putchar\n");
+	int putArray[] = {95, 112, 117, 116, 99, 104, 97, 114};
+	for (int i = 0; i < 10; i++ )
+	{
+		_putchar(i);
+	}
+	_putchar('\n');
 	return (0);
 }
