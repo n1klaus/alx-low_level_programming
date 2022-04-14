@@ -4,6 +4,6 @@
 #include <stdio.h>
 
 int _putchar(char c);
-void print_triangle(int size);
+void more_numbers(void);
 
 #endif /* MAIN_H */
