@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-int mul(int a, int b);
+void print_numbers(void);
 
 #endif /* MAIN_H */
