@@ -9,7 +9,7 @@
  *
  * Return: 1 for lowercase character. 0 for the rest.
  */
-int _islower(int c)
+int islower(int c)
 {
 	if (c >= 97 && c <= 122)
 	{
@@ -19,5 +19,5 @@ int _islower(int c)
 	{
 		return (0);
 	}
-	_putchar('\n');
+	putchar('\n');
 }
