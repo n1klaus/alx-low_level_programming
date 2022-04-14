@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-int largest_number(int, int, int);
+double largest_number(double, double, double);
 
 #endif /* MAIN_H */
