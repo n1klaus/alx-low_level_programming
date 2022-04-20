@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-void _puts(char *str);
+void print_rev(char *s);
 
 #endif /* MAIN_H */
