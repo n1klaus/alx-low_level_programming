@@ -20,9 +20,9 @@ char *_strncpy(char *dest, char *src, int n)
 		d++;
 	}
 
-	while (c < n && n <= d && *(dest + c) != '\0')
+	while (c < n && *(dest + c) != '\0')
 	{
-		if (n <= s)
+		if (n < s || n < d)
 		{
 			*(dest + c) = *(src + c);
 		}
