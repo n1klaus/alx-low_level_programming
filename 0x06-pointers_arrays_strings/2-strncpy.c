@@ -28,7 +28,7 @@ char *_strncpy(char *dest, char *src, int n)
 		}
 		else
 		{
-			*(dest + c) = *(src + c);
+			*(dest + c) = '\0';
 		}
 		c++;
 	}
