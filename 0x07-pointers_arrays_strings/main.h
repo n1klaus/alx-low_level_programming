@@ -2,5 +2,5 @@
 #define MAIN_H
 
 #include <stdio.h>
-void print_chessboard(char (*a)[8]);
+void print_diagsums(int *a, int size);
 #endif /* MAIN_H */
