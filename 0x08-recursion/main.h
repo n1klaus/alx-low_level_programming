@@ -2,5 +2,6 @@
 #define MAIN_H
 
 #include <stdio.h>
-int is_palindrome(char *s);
+int wildcmp(char *s1, char *s2);
+
 #endif /* MAIN_H */
