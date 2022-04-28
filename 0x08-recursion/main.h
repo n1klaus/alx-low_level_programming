@@ -2,5 +2,6 @@
 #define MAIN_H
 
 #include <stdio.h>
-int _strlen_recursion(char *s);
+
+int factorial(int n);
 #endif /* MAIN_H */
