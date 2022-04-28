@@ -1,1 +1,1 @@
-void _puts_recursion(char *s)
+0-puts_recursion
