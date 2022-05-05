@@ -1,19 +1,19 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * main - prints the function
- *
+ * check_change - count coins required to make change.
+ * main - prints the main function.
  * @argc: arguments count
  * @argv: arguments vector array of strings
  * Return: O if successful
  */
-int main(int argc, char *argv[])
+int check_change(int argc, char *argv[])
 {
 	int cents, coins = 0;
 
 	if (argc == 2)
 	{
-		cents = atoi(*(argv + 1));
+		cents = atoi(*(argv[1]);
 		while (cents > 0)
 		{
 			if (cents % 25 < cents)
@@ -44,10 +44,17 @@ int main(int argc, char *argv[])
 		}
 	}
 	else
-	{
 		printf("Error\n");
+	return (coins);
+}
+
+int main(void)
+{
+	int cc;
+
+	cc = check_change();
+	if (cc == NULL)
 		return (1);
-	}
-	printf("%d\n", coins);
-	return (0);
+	else
+		return (0);
 }
