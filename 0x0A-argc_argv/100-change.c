@@ -44,10 +44,8 @@ int main(int argc, char *argv[])
 		}
 	}
 	else
-	{
 		printf("Error\n");
 		return (1);
-	}
 	printf("%d\n", coins);
 	return (0);
 }
