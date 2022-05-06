@@ -2,7 +2,6 @@
 #include <stdlib.h>
 /**
  * check_change - count coins required to make change.
- * main - prints the main function.
  * @argc: arguments count
  * @argv: arguments vector array of strings
  * Return: O if successful
@@ -48,6 +47,11 @@ int check_change(int argc, char *argv[])
 	return (coins);
 }
 
+/**
+ * main - prints the main function.
+ * 
+ * Return: O if successful
+ */
 int main(void)
 {
 	int cc;
