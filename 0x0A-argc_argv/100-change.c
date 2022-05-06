@@ -49,7 +49,7 @@ int check_change(int argc, char *argv[])
 
 /**
  * main - prints the main function.
- * 
+ *
  * Return: O if successful
  */
 int main(void)
