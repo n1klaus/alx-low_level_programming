@@ -7,7 +7,7 @@
   */
 size_t print_list(const list_t *h)
 {
-	unsigned int c;
+	size_t c;
 
 	c = 0;
 	while (c <= sizeof(*h) && h != NULL)
@@ -19,6 +19,6 @@ size_t print_list(const list_t *h)
 		h = h->next;
 		c++;
 	}
-	return ((size_t)c);
+	return (c);
 }
 
