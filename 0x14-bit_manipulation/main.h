@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <math.h>
 
-unsigned int binary_to_uint(const char *b);
 int _putchar(char c);
+int _pow_recursion(int x, int y);
+unsigned int binary_to_uint(const char *b);
+
 #endif /* MAIN_H */

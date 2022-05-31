@@ -14,8 +14,10 @@ unsigned int binary_to_uint(const char *b)
 	i = rem = num = 0;
 	while (*(b + i) != '\0')
 	{
-		if (*(b + i) >=48 && *(b + i) <= 57)
+		if (*(b + i) >= 48 && *(b + i) <= 57)
 			;
+		else if ((b + i) == NULL)
+			return (0);
 		else
 			return (0);
 		i++;
@@ -26,7 +28,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		rem = bin % 10;
 		bin /= 10;
-		num += rem * pow(2, i);
+		num += rem * _pow_recursion(2, i);
 		i++;
 	}
 	return (num);
