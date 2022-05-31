@@ -11,7 +11,7 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int num;
 	int len, bin;
-	
+
 	if (b == NULL)
 		return (0);
 
@@ -20,12 +20,12 @@ unsigned int binary_to_uint(const char *b)
 
 	num = 0;
 
-	for (len--, bin = 1; len >= 0; len--, bin *=2)
+	for (len--, bin = 1; len >= 0; len--, bin *= 2)
 	{
 		if (*(b + len) != '0' && *(b + len) != '1')
 			return (0);
 
-		if (*(b + len) &1)
+		if (*(b + len) & 1)
 			num += bin;
 	}
 	return (num);
