@@ -9,27 +9,24 @@
   */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i, rem, num, bin;
+	unsigned int num;
+	int len, bin;
+	
+	if (b == NULL)
+		return (0);
 
-	i = rem = num = 0;
-	while (*(b + i) != '\0')
+	for (len = 0; *(b + len) != '\0'; len++)
+		;
+
+	num = 0;
+
+	for (len--, bin = 1; len >= 0; len--, bin *=2)
 	{
-		if (*(b + i) >= 48 && *(b + i) <= 57)
-			;
-		else if ((b + i) == NULL)
+		if (*(b + len) != '0' && *(b + len) != '1')
 			return (0);
-		else
-			return (0);
-		i++;
-	}
-	i = 0;
-	bin = atoi(b);
-	while (bin != 0)
-	{
-		rem = bin % 10;
-		bin /= 10;
-		num += rem * _pow_recursion(2, i);
-		i++;
+
+		if (*(b + len) &1)
+			num += bin;
 	}
 	return (num);
 }
