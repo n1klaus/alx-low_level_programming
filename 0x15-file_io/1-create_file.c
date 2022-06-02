@@ -21,14 +21,14 @@ int create_file(const char *filename, char *text_content)
 	if (text_content == NULL)
 		text_content = "";
 
-	openf = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+	openf = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (openf == -1)
 		return (-1);
 
 	i = 0;
 	while (*(text_content + i) != '\0')
 	{
-		written = write(openf, buf, *(text_content + i));
+		written = write(openf, buf, i);
 		i++;
 	}
 	if (written == -1)
