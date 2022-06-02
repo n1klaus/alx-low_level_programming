@@ -18,13 +18,19 @@ int create_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	openf = open(filename, O_TRUNC | O_CREAT);
+	if (text_content == NULL)
+		open("text_content", O_RDWR | O_CREAT);
+
+	openf = open(filename, O_TRUNC | O_CREAT | O_RDWR);
 	if (openf == -1)
 		return (-1);
 
 	i = 0;
-	while ( *(text_content + i) != '\0')
+	while (*(text_content + i) != '\0')
+	{
 		written = write(openf, buf, *(text_content + i));
+		i++;
+	}
 	if (written == -1)
 		return (-1);
 
