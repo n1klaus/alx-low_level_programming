@@ -21,15 +21,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	openf = open(filename, O_RDONLY);
-	if (openf != 0)
+	if (openf == -1)
 		return (0);
 
 	readf = read(openf, buf, letters);
-	if (readf != 0)
+	if (readf == -1)
 		return (0);
 
 	written = write(1, buf, readf);
-	if (written != 0)
+	if (written == -1)
 		return (0);
 
 	close(openf);
