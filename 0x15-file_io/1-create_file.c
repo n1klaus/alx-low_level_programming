@@ -10,10 +10,6 @@
 int create_file(const char *filename, char *text_content)
 {
 	ssize_t i, openf, written;
-	char *buf = malloc(sizeof(char) * (strlen(text_content)));
-
-	if (buf == NULL)
-		return (-1);
 
 	if (filename == NULL)
 		return (-1);
@@ -27,14 +23,11 @@ int create_file(const char *filename, char *text_content)
 
 	i = 0;
 	while (*(text_content + i) != '\0')
-	{
-		written = write(openf, buf, i);
 		i++;
-	}
+	written = write(openf, text_content, i);
 	if (written == -1)
 		return (-1);
 
 	close(openf);
-	free(buf);
 	return (written);
 }
