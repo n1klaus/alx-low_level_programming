@@ -6,9 +6,8 @@
  */
 int main(int ac, char **av)
 {
-    int wstate, status, i = 1;
+    int wstate, i = 1;
     pid_t parent_pid, child_pid;
-    size_t len = MAXLEN;
     struct stat statbuf;
     char *prompt = "#cmd$ ";
 
@@ -32,7 +31,7 @@ int main(int ac, char **av)
         {
             if (stat(av[i], &statbuf) != 0)
             {
-                perror("Stat Error")
+                perror("Stat Error");
                 return(EXIT_FAILURE);
             }
             if(execve(av[i], av, NULL) == -1)
