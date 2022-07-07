@@ -6,7 +6,7 @@
  *
  * Return: nodes from position 0 to index
  */
-dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	dlistint_t *current = NULL;
 	int counter = 0;
