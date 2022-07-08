@@ -11,7 +11,9 @@ void free_dlistint(dlistint_t *head)
 	int counter;
 
 	tail = head;
-	while (tail != NULL)
+	if (tail == NULL)
+		exit(98);
+	while (tail->next != NULL)
 	{
 		tail = tail->next;
 		counter++;
