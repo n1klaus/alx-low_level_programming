@@ -12,7 +12,7 @@ void free_dlistint(dlistint_t *head)
 
 	tail = head;
 	if (tail == NULL)
-		exit(98);
+		exit(EXIT_SUCCESS);
 	while (tail->next != NULL)
 	{
 		tail = tail->next;
