@@ -4,7 +4,8 @@
  * @head : head node of the list
  * @index : index position of the node starting from 0
  *
- * Return: nodes from position 0 to index
+ * Return: nodes from position 0 to index,
+ * or NULL if node does not exist
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
@@ -13,7 +14,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	current = head;
 	if (head == NULL)
-		return (head);
+		return (NULL);
 	while (current->next != NULL)
 	{
 		current = current->next;
