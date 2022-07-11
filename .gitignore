@@ -25,5 +25,5 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
-./vgcore*
-./*.out
+./[vgcore*]
+./[*.out]
