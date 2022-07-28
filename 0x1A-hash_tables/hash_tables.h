@@ -38,6 +38,7 @@ typedef struct hash_table_s
 
 /* int test_prime(size_t num); */
 /* int get_prime(size_t num); */
+unsigned long int hash_djb2(const unsigned char *str);
 hash_table_t *hash_table_create(unsigned long int size);
 
 #endif /* __HASH_TABLES__ */
