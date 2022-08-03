@@ -4,17 +4,12 @@
  * @key : key
  * @size : size of the array of the hash table
  *
- * Return unsigned long int
+ * Return: index at which the key/value pair should be stored
+ * in the array of the hash table
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int index = hash_djb2(key);
-	hash_table_t *hash_table = hash_table_create(size);
+	unsigned long int hashindex = hash_djb2(key);
 
-	if (hash_table == NULL)
-		exit(EXIT_FAILURE);
-
-	if (hash_table->array[index] == 0)
-		exit(EXIT_FAILURE);
-	return (index);
+	return ((unsigned long int) hashindex % size);
 }
