@@ -13,6 +13,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int location = key_index((const unsigned char *)key,
 					(unsigned long int) ht->size);
 
+	if (ht == NULL || key == NULL || *key == '\0')
+		return (NULL);
 	for (index = location; ht->array[index]; index++)
 	{
 		if (strcmp(ht->array[index]->key, key) == 0)
