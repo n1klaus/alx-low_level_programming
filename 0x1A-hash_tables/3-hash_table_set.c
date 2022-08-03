@@ -30,9 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	temp = ht->array[location];
 	new = (hash_node_t *) malloc(sizeof(hash_node_t));
-	new->key = (char *) malloc(strlen(key) + 1);
-	new->value = (char *) malloc(strlen(value) + 1);
-	if (new == NULL || new->key == NULL || new->value == NULL)
+	if (new == NULL)
 		return (0);
 	new->key = strdup(key);
 	if (new->key == NULL)
