@@ -15,6 +15,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
+	if (location >= ht->size)
+		return (NULL);
 	temp = ht->array[location];
 	while (temp != NULL)
 	{
