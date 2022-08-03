@@ -11,10 +11,11 @@
 int main(void)
 {
 	hash_table_t *ht;
-	int status = 0, counter = 0;
+	/*int status = 0, counter = 0;*/
 
 	ht = hash_table_create(1024);
-	status = hash_table_set(ht, "betty", "cool");
+	hash_table_set(ht, "betty", "cool");
+	/**
 	printf("%d Status :=> %d\n", counter++, status);
 
 	status = hash_table_set(ht, "hetairas", "mentioner");
@@ -37,5 +38,6 @@ int main(void)
 
 	status = hash_table_set(ht, "dram", "vivency");
 	printf("%d Status :=> %d\n", counter++, status);
+	*/
 	return (EXIT_SUCCESS);
 }
