@@ -16,21 +16,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (key == NULL)
 		return (0);
 	temp = ht->array[location];
-	if (temp != NULL)
-	{
-		hash_node_t *new = (hash_node_t *) malloc(sizeof(hash_node_t));
-
-		new->key = (char *) malloc(strlen(key) + 1);
-		new->value = (char *) malloc(strlen(value) + 1);
-		if (new == NULL || new->key == NULL || new->value == NULL)
-			return (0);
-		strcpy(new->key, key);
-		strcpy(new->value, value);
-		temp->next = NULL;
-		new->next = temp;
-		ht->array[location] = new;
-		return (1);
-	}
 	temp = (hash_node_t *) malloc(sizeof(hash_node_t));
 	temp->key = (char *) malloc(strlen(key) + 1);
 	temp->value = (char *) malloc(strlen(value) + 1);
