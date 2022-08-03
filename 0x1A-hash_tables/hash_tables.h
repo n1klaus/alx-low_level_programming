@@ -3,9 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-#define PRIME 1
-#define NOT_PRIME 0
+#include <string.h>
 
 /**
  * struct hash_node_s - Node of a hash table
@@ -36,10 +34,9 @@ typedef struct hash_table_s
      hash_node_t **array;
 } hash_table_t;
 
-/* int test_prime(size_t num); */
-/* int get_prime(size_t num); */
 unsigned long int hash_djb2(const unsigned char *str);
 hash_table_t *hash_table_create(unsigned long int size);
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
+int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 
 #endif /* __HASH_TABLES__ */
