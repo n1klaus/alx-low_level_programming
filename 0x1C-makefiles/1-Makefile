@@ -3,10 +3,10 @@
 # make -f 1-Makefile clean	# remove all binary and objects
 
 CC := gcc
-SRC := $(wildcard *.c)
+SRC := ${wildcard *.c}
 
 all:
-	@$(CC) -Wall -Wextra -Werror -pedantic -std=gnu89 $(SRC) -o school
+	@${CC} -Wall -Wextra -Werror -pedantic -std=gnu89 ${SRC} -o school
 
 clean:
 	@rm school
