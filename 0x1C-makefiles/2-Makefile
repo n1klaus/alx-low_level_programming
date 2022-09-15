@@ -1,0 +1,15 @@
+# Usage:
+# make -f 2-Makefile		# compile all binary
+# make -f 2-Makefile clean	# remove all binary and objects
+
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(wildcard *.o)
+NAME = school
+
+all:
+	@$(CC) -Wall -Wextra -Werror -pedantic -std=gnu89 -c $(SRC)
+	@$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	@rm $(OBJ) $(NAME)
