@@ -3,8 +3,8 @@
 # make -f 2-Makefile clean	# remove all binary and objects
 
 CC = gcc
-SRC = main.c school.c m.h
-OBJ = main.o school.o
+SRC = $(wildcard *.c)
+OBJ = $(SRC:%.c=%.o)
 NAME = school
 
 all: $(NAME)
