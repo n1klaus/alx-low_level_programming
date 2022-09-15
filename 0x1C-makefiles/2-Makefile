@@ -7,15 +7,11 @@ SRC = main.c school.c m.h
 OBJ = main.o school.o
 NAME = school
 
-all: main.o school.o $(NAME)
+all: $(NAME)
 
-main.o: main.c
-	@$(CC) -c -o $@ $<
-
-school.o: school.c
-	@$(CC) -c -o $@ $<
-
-$(NAME): $(OBJ)
+$(NAME): $(SRC)
+	@$(CC) -c -o main.o main.c
+	@$(CC) -c -o school.o school.c
 	@$(CC) $(OBJ) -o $(NAME)
 
 clean:
