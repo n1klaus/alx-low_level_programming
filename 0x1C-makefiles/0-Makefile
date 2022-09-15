@@ -1,0 +1,9 @@
+# Usage:
+# make -f 0-Makefile		# compile all binary
+# make -f 0-Makefile clean	# remove all binary and objects
+
+all:
+	@gcc -Wall -Wextra -Werror -pedantic -std=gnu89 main.c school.c -o school
+
+clean:
+	@rm school
