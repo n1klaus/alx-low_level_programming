@@ -2,8 +2,8 @@
 # make -f 1-Makefile		# compile all binary
 # make -f 1-Makefile clean	# remove all binary and objects
 
-CC := gcc
-SRC := main.c school.c
+CC = gcc
+SRC = main.c school.c
 
 all:
 	@${CC} -Wall -Wextra -Werror -pedantic -std=gnu89 ${SRC} -o school
