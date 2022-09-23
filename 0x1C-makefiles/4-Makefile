@@ -9,33 +9,21 @@
 # make -f 3-Makefile re		# forces recompilation of all source files
 
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
 NAME = school
-RM = rm
-CFLAGS = -Wall -Wextra -Werror -pedantic -std=gnu89
+RM = rm -f
+CFLAGS = -Wall -Wextra -Werror -pedantic
 
-all: main.o out
-
-main.o: $(SRC)
-	@$(CC) $(CFLAGS) -c -o main.o main.c
-	@$(CC) $(CFLAGS) -c -o school.o school.c
-
-out: $(OBJ)
-	@$(CC) $(OBJ) -o $(NAME)
-
-re:
-	$(oclean)
-	$(all)
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	@$(RM) -f $(NAME)
-	@$(RM) -f $(%~)
+	$(RM) *~ $(NAME)
 
 oclean:
-	@$(RM) -f $(%.o)
+	$(RM) $(OBJ)
 
-fclean:
-	@$(RM) -f $(%~)
-	@$(RM) -f $(%.o)
-	@$(RM) -f $(NAME)
+fclean: clean oclean
+
+re: fclean all
