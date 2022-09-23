@@ -1,0 +1,31 @@
+# Usage:
+# make -f 3-Makefile		# compile all binary
+# make -f 3-Makefile all	# all: builds your executable
+# make -f 3-Makefile clean	# deletes all Emacs and Vim temporary files\
+				along with the executable
+# make -f 3-Makefile oclean	# deletes the object files
+# make -f 3-Make fclean		# deletes all Emacs and Vim temporary files,\
+				the executable, and the object files
+# make -f 3-Makefile re		# forces recompilation of all source files
+
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Wextra -Werror -pedantic
+
+.PHONY: all clean oclean fclean re
+
+all: m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
