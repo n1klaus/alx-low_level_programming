@@ -2,16 +2,9 @@
 # make -f 2-Makefile		# compile all binary
 
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
 NAME = school
 
-all: main.o %
-
-main.o: $(SRC)
-	@$(CC) -c -o main.o main.c
-	@$(CC) -c -o school.o school.c
-
-%: $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
