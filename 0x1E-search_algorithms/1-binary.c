@@ -1,35 +1,38 @@
 #include "search_algos.h"
 /**
  * print_subarray - print segment of array
- * array : pointer to the first element of the array
- * left : starting index
- * right : ending index
+ * @array: pointer to the first element of the array
+ * @left: starting index
+ * @right: ending index
  *
- * Return : nothing
- */
+ * Return: nothing
+ **/
 void print_subarray(int *array, int left, int right)
 {
 	int index = left;
 
-	printf("Searching in array: ");
-	while (index <= right)
+	if (left <= right)
 	{
-		printf("%d", array[index]);
-		if (index != right)
-			printf(", ");
-		index++;
+		printf("Searching in array: ");
+		while (index <= right)
+		{
+			printf("%d", array[index]);
+			if (index != right)
+				printf(", ");
+			index++;
+		}
+		printf("\n");
 	}
-	printf("\n");
 }
 
 /**
  * binary_search - searches for a value in a sorted array of integers
- * array : pointer to the first element of the array to search in
- * size : number of elements in array
- * value : value to search for
+ * @array: pointer to the first element of the array to search in
+ * @size: number of elements in array
+ * @value: value to search for
  *
- * Return : the index where value is located in array,
- * 	otherwise -1 if not present in array
+ * Return: the index where value is located in array,
+ *	otherwise -1 if not present in array
  */
 int binary_search(int *array, size_t size, int value)
 {
@@ -37,19 +40,20 @@ int binary_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
-	
-	while (left != right)
+
+	print_subarray(array, left, right);
+	while (left <= right)
 	{
-		middle = (left + right + 1) / 2;
+		middle = ((left + right) / 2) + 0.5;
 		if (array[middle] > value)
 			right = middle - 1;
+		else if (array[middle] < value)
+			left = middle + 1;
 		else
-			left = middle;
+			break;
 		print_subarray(array, left, right);
 	}
 	if (array[middle] == value)
 		return (middle);
 	return (-1);
 }
-
-
