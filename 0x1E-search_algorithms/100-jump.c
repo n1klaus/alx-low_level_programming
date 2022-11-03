@@ -26,13 +26,12 @@ int min(int a, int b)
  */
 int jump_search(int *array, size_t size, int value)
 {
-	unsigned long index = 0;
-	int step = sqrt(size);
+	unsigned long index = 0, step = sqrt(size);
 
 	if (array == NULL)
 		return (-1);
 
-	while (index <= size)
+	while (step <= size)
 	{
 		printf("Value checked array[%lu] = [%d]\n", index,
 			array[index]);
@@ -42,10 +41,10 @@ int jump_search(int *array, size_t size, int value)
 			break;
 	}
 
-	printf("Value found between indexes [%lu] and [%d]\n",
+	printf("Value found between indexes [%lu] and [%lu]\n",
 		index > 0 ? index -= (int)sqrt(size) : 0,
 		step > sqrt(size) ? step -= (int)sqrt(size) : (int)sqrt(size));
-	while (array[index] <= value && index < size)
+	while (index <= step)
 	{
 		printf("Value checked array[%lu] = [%d]\n",
 			index, array[index]);
